@@ -1,7 +1,13 @@
 import React from "react";
 import { Star } from "lucide-react";
 
-export function TestimonialCard({ name, role, rating }) {
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  rating: number;
+}
+
+export function TestimonialCard({ name, role, rating }: TestimonialCardProps) {
   return (
     <div className="p-6 border rounded-xl animate-fade-in hover:bg-white/5 transition-colors">
       <div className="flex items-center gap-4 mb-4">
