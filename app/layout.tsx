@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Poppins, Montserrat, Bodoni_Moda } from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +11,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-heading' });
+const poppins = Poppins({ 
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-subtitle'
+});
+const bodoni = Bodoni_Moda({ 
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  variable: '--font-body'
 });
 
 export const metadata: Metadata = {
@@ -25,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${montserrat.variable} ${poppins.variable} ${bodoni.variable} font-body`}
       >
         {children}
       </body>
